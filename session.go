@@ -62,6 +62,10 @@ type Session struct {
 	sessionType sessionType
 }
 
+func (session *Session) SetContext(ctx context.Context) {
+	session.ctx = ctx
+}
+
 // Clone copy all the session's content and return a new session
 func (session *Session) Clone() *Session {
 	var sess = *session
